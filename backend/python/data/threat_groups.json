@@ -1,0 +1,2313 @@
+[
+    {
+        "id": "apt28",
+        "name": "APT28",
+        "aliases": [
+            "Fancy Bear",
+            "Sofacy",
+            "Sednit",
+            "Pawn Storm",
+            "STRONTIUM"
+        ],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government",
+            "Military",
+            "Security Organizations",
+            "NATO"
+        ],
+        "primary_attack_types": [
+            "Spearphishing",
+            "Zero-day exploits",
+            "Credential harvesting"
+        ],
+        "tools": [
+            "XAgent",
+            "X-Tunnel",
+            "WinIDS",
+            "Foozer"
+        ],
+        "description": "A Russian cyber espionage group believed to be associated with the GRU. Active since at least 2004, known for high-profile attacks including the DNC hack."
+    },
+    {
+        "id": "apt29",
+        "name": "APT29",
+        "aliases": [
+            "Cozy Bear",
+            "The Dukes",
+            "Yttrium"
+        ],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government Ministries",
+            "Think Tanks",
+            "Healthcare",
+            "Energy"
+        ],
+        "primary_attack_types": [
+            "Spearphishing",
+            "Well-crafted malware",
+            "Cloud exploitation"
+        ],
+        "tools": [
+            "MiniDuke",
+            "CosmicDuke",
+            "GeminiDuke",
+            "HammerToss"
+        ],
+        "description": "Another Russian group, often attributed to the SVR. Known for stealthy, long-term espionage campaigns, including the SolarWinds supply chain attack."
+    },
+    {
+        "id": "lazarus",
+        "name": "Lazarus Group",
+        "aliases": [
+            "Hidden Cobra",
+            "Guardians of Peace",
+            "ZINC"
+        ],
+        "country": "North Korea",
+        "flag_code": "kp",
+        "category": "State-Sponsored",
+        "targets": [
+            "Financial Institutions",
+            "Cryptocurrency Exchanges",
+            "Media",
+            "Defense"
+        ],
+        "primary_attack_types": [
+            "Destructive malware (Wiper)",
+            "SWIFT fraud",
+            "ATM cashouts"
+        ],
+        "tools": [
+            "WannaCry",
+            "Manuscrypt",
+            "Destover",
+            "FastCash"
+        ],
+        "description": "A prolific North Korean group linked to the RGB. Responsible for the Sony Pictures hack, the Bangladesh Bank heist, and the WannaCry ransomware outbreak."
+    },
+    {
+        "id": "apt41",
+        "name": "APT41",
+        "aliases": [
+            "Double Dragon",
+            "BARIUM",
+            "Winnti"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored / Criminal",
+        "targets": [
+            "Gaming",
+            "Software Development",
+            "Healthcare",
+            "Telecommunications"
+        ],
+        "primary_attack_types": [
+            "Supply chain compromise",
+            "Software vulnerability exploitation"
+        ],
+        "tools": [
+            "Cobalt Strike",
+            "Derusbi",
+            "PlugX",
+            "Winnti"
+        ],
+        "description": "A unique Chinese group that conducts both state-sponsored espionage and financially motivated cybercrime, often targeting the video game industry."
+    },
+    {
+        "id": "apt33",
+        "name": "APT33",
+        "aliases": [
+            "Elfin",
+            "Refined Kitten",
+            "Holmium"
+        ],
+        "country": "Iran",
+        "flag_code": "ir",
+        "category": "State-Sponsored",
+        "targets": [
+            "Aerospace",
+            "Energy",
+            "Petrochemicals"
+        ],
+        "primary_attack_types": [
+            "Spearphishing",
+            "Password spraying",
+            "Destructive wipers"
+        ],
+        "tools": [
+            "Shamoon",
+            "StoneDrill",
+            "TurnedUp"
+        ],
+        "description": "An Iranian group targeting aerospace and energy sectors in the US, Saudi Arabia, and South Korea. associated with the Shamoon wiper attacks."
+    },
+    {
+        "id": "equation",
+        "name": "Equation Group",
+        "aliases": [
+            "Remsec"
+        ],
+        "country": "USA",
+        "flag_code": "us",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government",
+            "Telecom",
+            "Aerospace",
+            "Energy",
+            "Nuclear Research"
+        ],
+        "primary_attack_types": [
+            "Firmware hacking",
+            "Zero-day exploits",
+            "Interdiction"
+        ],
+        "tools": [
+            "Fanny",
+            "DoubleFantasy",
+            "EquationDrug",
+            "GrayFish"
+        ],
+        "description": "Highly sophisticated group widely suspected to be tied to the NSA. Known for complex malware platforms and hard drive firmware reprogramming capabilities."
+    },
+    {
+        "id": "sandworm",
+        "name": "Sandworm Team",
+        "aliases": [
+            "Voodoo Bear",
+            "Telebots",
+            "BlackEnergy",
+            "Iron Viking"
+        ],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "State-Sponsored",
+        "targets": [
+            "Critical Infrastructure",
+            "Power Grids",
+            "Government",
+            "Media"
+        ],
+        "primary_attack_types": [
+            "Destructive malware",
+            "ICS/SCADA attacks"
+        ],
+        "tools": [
+            "BlackEnergy",
+            "Industroyer",
+            "NotPetya",
+            "Olympic Destroyer"
+        ],
+        "description": "Russian GRU unit responsible for the disruptive attacks on Ukraine's power grid and the global NotPetya ransomware attack."
+    },
+    {
+        "id": "apt1",
+        "name": "APT1",
+        "aliases": [
+            "Comment Crew",
+            "Shanghai Group",
+            "Unit 61398"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Information Technology",
+            "Aerospace",
+            "Public Administration",
+            "Satellites"
+        ],
+        "primary_attack_types": [
+            "Spearphishing",
+            "Web compromise"
+        ],
+        "tools": [
+            "PoisonIvy",
+            "Ghodst RAT",
+            "Mimikatz"
+        ],
+        "description": "One of the most prolific Chinese cyber espionage groups, exposed by Mandiant in 2013 as Unit 61398 of the PLA."
+    },
+    {
+        "id": "apt32",
+        "name": "APT32",
+        "aliases": [
+            "OceanLotus",
+            "SeaLotus"
+        ],
+        "country": "Vietnam",
+        "flag_code": "vn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Foreign Governments",
+            "Dissidents",
+            "Journalists",
+            "Automotive"
+        ],
+        "primary_attack_types": [
+            "Watering hole attacks",
+            "Social engineering"
+        ],
+        "tools": [
+            "Windshield",
+            "Komprogo",
+            "Soundbite"
+        ],
+        "description": "A Vietnam-linked group targeting foreign companies investing in Vietnam's manufacturing, consumer products, and hospitality sectors."
+    },
+    {
+        "id": "oilrig",
+        "name": "OilRig",
+        "aliases": [
+            "APT34",
+            "Helix Kitten",
+            "Chrysene"
+        ],
+        "country": "Iran",
+        "flag_code": "ir",
+        "category": "State-Sponsored",
+        "targets": [
+            "Financial",
+            "Government",
+            "Energy",
+            "Chemical",
+            "Telecommunications"
+        ],
+        "primary_attack_types": [
+            "Social engineering via LinkedIn",
+            "Supply chain"
+        ],
+        "tools": [
+            "POWRUNER",
+            "BONDUPDATER",
+            "QuadAgent"
+        ],
+        "description": "Iranian group focused on reconnaissance and espionage in the Middle East, targeting finance, energy, and government organizations."
+    },
+    {
+        "id": "fin7",
+        "name": "FIN7",
+        "aliases": [
+            "Carbanak",
+            "Navigator Group"
+        ],
+        "country": "Unknown",
+        "flag_code": "xx",
+        "category": "Cybercrime",
+        "targets": [
+            "Retail",
+            "Restaurant",
+            "Hospitality"
+        ],
+        "primary_attack_types": [
+            "Spearphishing",
+            "Malicious USBs"
+        ],
+        "tools": [
+            "Carbanak",
+            "Cobalt Strike",
+            "Griffon"
+        ],
+        "description": "Financially motivated group known for stealing millions of credit card numbers. Often mimics business processes to trick victims."
+    },
+    {
+        "id": "turla",
+        "name": "Turla",
+        "aliases": [
+            "Snake",
+            "Uroburos",
+            "Waterbug",
+            "Krypton"
+        ],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government",
+            "Embassies",
+            "Military",
+            "Education",
+            "Research"
+        ],
+        "primary_attack_types": [
+            "Satellite hijacking",
+            "Watering holes",
+            "Rootkits"
+        ],
+        "tools": [
+            "Carbon",
+            "Snake",
+            "Kazuar",
+            "ComRAT"
+        ],
+        "description": "Another Russian-linked group known for complex malware and using hijacked satellite internet connections for C2 anonymity."
+    },
+    {
+        "id": "muddywater",
+        "name": "MuddyWater",
+        "aliases": [
+            "Static Kitten",
+            "Seedworm",
+            "TEMP.Zagros"
+        ],
+        "country": "Iran",
+        "flag_code": "ir",
+        "category": "State-Sponsored",
+        "targets": [
+            "Telecommunications",
+            "Government",
+            "Oil",
+            "Airline"
+        ],
+        "primary_attack_types": [
+            "Spearphishing",
+            "Powershell exploits"
+        ],
+        "tools": [
+            "POWERSTATS",
+            "MuddyC3"
+        ],
+        "description": "Group believed to be subordinate to the Iranian MOIS. Targets organizations in the Middle East, Europe, and North America."
+    },
+    {
+        "id": "apt3",
+        "name": "APT3",
+        "aliases": [
+            "Buckeye",
+            "Gothic Panda",
+            "UPS Team"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Aerospace",
+            "Defense",
+            "Transportation",
+            "High Tech"
+        ],
+        "primary_attack_types": [
+            "Zero-day exploits",
+            "Phishing"
+        ],
+        "tools": [
+            "Pirpi",
+            "PlugX",
+            "ShimRat"
+        ],
+        "description": "China-based group attributed to the MSS. Known for the use of the Pirpi backdoor and exploitation of zero-day vulnerabilities."
+    },
+    {
+        "id": "apt10",
+        "name": "APT10",
+        "aliases": [
+            "Stone Panda",
+            "MenuPass",
+            "Red Apollo"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Managed Service Providers",
+            "Engineering",
+            "Telecom"
+        ],
+        "primary_attack_types": [
+            "Cloud hopping",
+            "Supply Chain"
+        ],
+        "tools": [
+            "PlugX",
+            "RedLeaves",
+            "ChChes",
+            "QuasarRAT"
+        ],
+        "description": "Notorious for the 'Cloud Hopper' campaign targeting MSPs to gain access to their clients' intellectual property."
+    },
+    {
+        "id": "darkside",
+        "name": "DarkSide",
+        "aliases": [
+            "BlackMatter"
+        ],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "Cybercrime / RaaS",
+        "targets": [
+            "Critical Infrastructure",
+            "Energy",
+            "Large Corporations"
+        ],
+        "primary_attack_types": [
+            "Ransomware",
+            "Double Extortion"
+        ],
+        "tools": [
+            "DarkSide Ransomware"
+        ],
+        "description": "Ransomware-as-a-Service group responsible for the Colonial Pipeline attack. Known for their 'professional' business model."
+    },
+    {
+        "id": "conti",
+        "name": "Conti",
+        "aliases": [
+            "Wizard Spider"
+        ],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "Cybercrime / RaaS",
+        "targets": [
+            "Health Care",
+            "Government",
+            "Law Enforcement"
+        ],
+        "primary_attack_types": [
+            "Ransomware"
+        ],
+        "tools": [
+            "Conti Ransomware",
+            "TrickBot",
+            "Cobalt Strike"
+        ],
+        "description": "One of the most aggressive ransomware groups, known for targeting hospitals and public services. Disbanded/reformed after internal chat leaks."
+    },
+    {
+        "id": "revil",
+        "name": "REvil",
+        "aliases": [
+            "Sodinokibi"
+        ],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "Cybercrime / RaaS",
+        "targets": [
+            "IT Services",
+            "Government",
+            "Manufacturing"
+        ],
+        "primary_attack_types": [
+            "Ransomware",
+            "Supply Chain"
+        ],
+        "tools": [
+            "Sodinokibi Ransomware"
+        ],
+        "description": "Responsible for the Kaseya VSA supply chain attack. Known for demanding exorbitant ransoms."
+    },
+    {
+        "id": "wizardspider",
+        "name": "Wizard Spider",
+        "aliases": [
+            "Grim Spider"
+        ],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "Cybercrime",
+        "targets": [
+            "Financial",
+            "Healthcare",
+            "Legal"
+        ],
+        "primary_attack_types": [
+            "Spam campaigns",
+            "Wire fraud",
+            "Ransomware"
+        ],
+        "tools": [
+            "TrickBot",
+            "Emotet",
+            "Ryuk",
+            "Conti"
+        ],
+        "description": "A sophisticated criminal group behind TrickBot and Ryuk. Often acts as an initial access broker for other ransomware gangs."
+    },
+    {
+        "id": "charmingkitten",
+        "name": "Charming Kitten",
+        "aliases": [
+            "APT35",
+            "Phosphorus",
+            "Ajax Security Team"
+        ],
+        "country": "Iran",
+        "flag_code": "ir",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government",
+            "Defense",
+            "Journalists",
+            "Activists"
+        ],
+        "primary_attack_types": [
+            "Account takeover",
+            "Spearphishing"
+        ],
+        "tools": [
+            "DownPaper",
+            "Magic Hound"
+        ],
+        "description": "Iranian group known for targeting individuals involved in Middle Eastern affairs, using elaborate social engineering personas."
+    },
+    {
+        "id": "mummy_spider",
+        "name": "Mummy Spider",
+        "aliases": [
+            "Emotet Group",
+            "TA542"
+        ],
+        "country": "Unknown",
+        "flag_code": "xx",
+        "category": "Cybercrime",
+        "targets": [
+            "Global",
+            "Banking",
+            "Defense"
+        ],
+        "primary_attack_types": [
+            "Malspam",
+            "Botnet distribution"
+        ],
+        "tools": [
+            "Emotet"
+        ],
+        "description": "Operators of the Emotet botnet, once described as the 'most dangerous malware in the world'. Provides access to other criminals."
+    },
+    {
+        "id": "wicked_panda",
+        "name": "Wicked Panda",
+        "aliases": [
+            "APT41"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "High Tech",
+            "Healthcare",
+            "Telecom",
+            "Video Games"
+        ],
+        "primary_attack_types": [
+            "Supply Chain",
+            "Software Exploits"
+        ],
+        "tools": [
+            "ShadowPad",
+            "Winnti"
+        ],
+        "description": "Prolific Chinese group conducting state espionage and personal profit cybercrime."
+    },
+    {
+        "id": "mustang_panda",
+        "name": "Mustang Panda",
+        "aliases": [
+            "Bronze President",
+            "TA416",
+            "RedDelta"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government",
+            "NGOs",
+            "Catholic Church"
+        ],
+        "primary_attack_types": [
+            "Spearphishing",
+            "USB propagation"
+        ],
+        "tools": [
+            "PlugX",
+            "Cobalt Strike"
+        ],
+        "description": "Targeting NGOs and government entities, particularly those with relations to China and the Vatican."
+    },
+    {
+        "id": "deep_panda",
+        "name": "Deep Panda",
+        "aliases": [
+            "Shell Crew",
+            "KungFu Kittens",
+            "PinkPanther"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government",
+            "Defense",
+            "Legal",
+            "Financial"
+        ],
+        "primary_attack_types": [
+            "Web compromise",
+            "Zero-day exploitation"
+        ],
+        "tools": [
+            "Derusbi",
+            "Winnti"
+        ],
+        "description": "Attributed to the Anthem health insurance breach and OPM data breach. Focuses on stealing PII."
+    },
+    {
+        "id": "silence",
+        "name": "Silence",
+        "aliases": [
+            "Whisper"
+        ],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "Cybercrime",
+        "targets": [
+            "Banks",
+            "Financial Systems"
+        ],
+        "primary_attack_types": [
+            "ATM jackpotting",
+            "Phishing"
+        ],
+        "tools": [
+            "Silence",
+            "Atmosphere"
+        ],
+        "description": "Russian-speaking group targeting financial organizations in Russia, former Soviet states, and Europe."
+    },
+    {
+        "id": "copykittens",
+        "name": "CopyKittens",
+        "aliases": [
+            "Meerkat"
+        ],
+        "country": "Iran",
+        "flag_code": "ir",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government",
+            "Defense",
+            "Academic"
+        ],
+        "primary_attack_types": [
+            "Watering holes",
+            "DNS hijacking"
+        ],
+        "tools": [
+            "Matryoshka"
+        ],
+        "description": "Iranian group targeting Israel, Saudi Arabia, Germany, and the US."
+    },
+    {
+        "id": "magic_hound",
+        "name": "Magic Hound",
+        "aliases": [
+            "APT35",
+            "Cobalt Gypsy"
+        ],
+        "country": "Iran",
+        "flag_code": "ir",
+        "category": "State-Sponsored",
+        "targets": [
+            "Energy",
+            "Government",
+            "Technology"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "Charming Kitten tools"
+        ],
+        "description": "Aggressive Iranian group known for high-volume spearphishing campaigns."
+    },
+    {
+        "id": "darkhotel",
+        "name": "DarkHotel",
+        "aliases": [
+            "Tapaoux",
+            "Fallout Team"
+        ],
+        "country": "South Korea",
+        "flag_code": "kr",
+        "category": "State-Sponsored",
+        "targets": [
+            "Business Travelers",
+            "Executives"
+        ],
+        "primary_attack_types": [
+            "Wi-Fi interception (Hotel)",
+            "P2P spreading"
+        ],
+        "tools": [
+            "DarkHotel",
+            "Karba",
+            "Tapaoux"
+        ],
+        "description": "Known for targeting C-level executives via hotel Wi-Fi networks in Asia."
+    },
+    {
+        "id": "scarcruft",
+        "name": "ScarCruft",
+        "aliases": [
+            "APT37",
+            "Group123",
+            "Reaper"
+        ],
+        "country": "North Korea",
+        "flag_code": "kp",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government",
+            "Defense",
+            "Defectors"
+        ],
+        "primary_attack_types": [
+            "Zero-day exploits",
+            "Torrent poisoning"
+        ],
+        "tools": [
+            "ROKRAT",
+            "DOGCALL"
+        ],
+        "description": "North Korean group focused on domestic surveillance and targeting those opposing the regime."
+    },
+    {
+        "id": "kimsuky",
+        "name": "Kimsuky",
+        "aliases": [
+            "Velvet Chollima",
+            "Black Banshee"
+        ],
+        "country": "North Korea",
+        "flag_code": "kp",
+        "category": "State-Sponsored",
+        "targets": [
+            "Think Tanks",
+            "Nuclear Power",
+            "Government"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "BabyShark",
+            "AppleSeed"
+        ],
+        "description": "Tasked with gathering intelligence on foreign policy and national security issues related to the Korean peninsula."
+    },
+    {
+        "id": "ta505",
+        "name": "TA505",
+        "aliases": [
+            "Hive0065"
+        ],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "Cybercrime",
+        "targets": [
+            "Retail",
+            "Financial",
+            "Transportation"
+        ],
+        "primary_attack_types": [
+            "Malspam",
+            "Dridex",
+            "Locky"
+        ],
+        "tools": [
+            "Dridex",
+            "Locky",
+            "Clop"
+        ],
+        "description": "One of the most active cybercriminal actors, known for distributing Dridex banking trojan and Locky ransomware."
+    },
+    {
+        "id": "gamaredon",
+        "name": "Gamaredon",
+        "aliases": [
+            "Primitive Bear",
+            "ACTINIUM"
+        ],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "State-Sponsored",
+        "targets": [
+            "Ukraine Government",
+            "Military"
+        ],
+        "primary_attack_types": [
+            "Spearphishing",
+            "VBA Macros"
+        ],
+        "tools": [
+            "Pterodo",
+            "GammaLoad"
+        ],
+        "description": "Russian FSB-linked group focused almost exclusively on targeting Ukrainian entities."
+    },
+    {
+        "id": "barium",
+        "name": "Barium",
+        "aliases": [
+            "APT41"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Telecom",
+            "Healthcare",
+            "High Tech"
+        ],
+        "primary_attack_types": [
+            "Supply Chain"
+        ],
+        "tools": [
+            "Winnti",
+            "PlugX"
+        ],
+        "description": "Chinese group known for supply chain attacks against software companies."
+    },
+    {
+        "id": "tick",
+        "name": "Tick",
+        "aliases": [
+            "Bronze Butler",
+            "REDBALDKNIGHT"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Japan",
+            "Defense",
+            "Technology"
+        ],
+        "primary_attack_types": [
+            "Spearphishing",
+            "Zero-day"
+        ],
+        "tools": [
+            "Daserf",
+            "Datper"
+        ],
+        "description": "Chinese group primarily targeting Japanese organizations in defense and technology sectors."
+    },
+    {
+        "id": "promethium",
+        "name": "Promethium",
+        "aliases": [
+            "StrongPity"
+        ],
+        "country": "Turkey",
+        "flag_code": "tr",
+        "category": "State-Sponsored",
+        "targets": [
+            "Dissidents",
+            "Journalists",
+            "Activist"
+        ],
+        "primary_attack_types": [
+            "Watering holes",
+            "Trojanized installers"
+        ],
+        "tools": [
+            "StrongPity"
+        ],
+        "description": "Group utilizing watering hole attacks to distribute trojanized versions of legitimate software like WinRAR and TrueCrypt."
+    },
+    {
+        "id": "neodymium",
+        "name": "Neodymium",
+        "aliases": [
+            "Titanium"
+        ],
+        "country": "Unknown",
+        "flag_code": "xx",
+        "category": "State-Sponsored",
+        "targets": [
+            "Defense",
+            "Government"
+        ],
+        "primary_attack_types": [
+            "Backdoors"
+        ],
+        "tools": [
+            "Titanium"
+        ],
+        "description": "Advanced group using complex backdoors that emulate legitimate software behavior."
+    },
+    {
+        "id": "platinum",
+        "name": "PLATINUM",
+        "aliases": [
+            "TwoForOne"
+        ],
+        "country": "South East Asia",
+        "flag_code": "xx",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government",
+            "ISP",
+            "Intelligence Agencies"
+        ],
+        "primary_attack_types": [
+            "Hotpatching",
+            "Zero-day"
+        ],
+        "tools": [
+            "Titanium",
+            "Platinum"
+        ],
+        "description": "Highly sophisticated group targeting South and Southeast Asia. Known for 'hotpatching' vulnerabilities to hide their presence."
+    },
+    {
+        "id": "apt19",
+        "name": "APT19",
+        "aliases": [
+            "Codoso",
+            "Sunshop Group"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Legal",
+            "Investment",
+            "Defense"
+        ],
+        "primary_attack_types": [
+            "Watering holes",
+            "Spearphishing"
+        ],
+        "tools": [
+            "Derusbi",
+            "PlugX"
+        ],
+        "description": "Chinese group targeting legal and investment firms."
+    },
+    {
+        "id": "apt18",
+        "name": "APT18",
+        "aliases": [
+            "Dynamite Panda",
+            "Wekby"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Healthcare",
+            "Aerospace",
+            "Technology"
+        ],
+        "primary_attack_types": [
+            "Web compromise"
+        ],
+        "tools": [
+            "Gh0st RAT",
+            "HTTPBrowser"
+        ],
+        "description": "Chinese group known for high-profile attacks on US healthcare and aerospace sectors."
+    },
+    {
+        "id": "apt17",
+        "name": "APT17",
+        "aliases": [
+            "Deputy Dog",
+            "Tailgator Team"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government",
+            "Defense",
+            "Law Firms"
+        ],
+        "primary_attack_types": [
+            "Web compromise",
+            "SQL Injection"
+        ],
+        "tools": [
+            "BLACKCOFFEE"
+        ],
+        "description": "Chinese group known for using Microsoft TechNet profiles to host C2 addresses."
+    },
+    {
+        "id": "apt16",
+        "name": "APT16",
+        "aliases": [
+            "SVCMON"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Media",
+            "High Tech"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "ELMER",
+            "IronHalo"
+        ],
+        "description": "Chinese group focusing on Japanese and Taiwanese organizations."
+    },
+    {
+        "id": "apt12",
+        "name": "APT12",
+        "aliases": [
+            "Calc Team",
+            "Numbered Panda"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Journalists",
+            "Government",
+            "Taiwan"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "Riptide",
+            "Hightide"
+        ],
+        "description": "Focused on tracking journalists and Taiwanese government entities."
+    },
+    {
+        "id": "admin338",
+        "name": "Admin@338",
+        "aliases": [
+            "MAGNITUDE"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Financial",
+            "Economic Policy"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "PoisonIvy",
+            "Lowball"
+        ],
+        "description": "Chinese group targeting organizations involved in international finance and economic policy."
+    },
+    {
+        "id": "thrip",
+        "name": "Thrip",
+        "aliases": [
+            "Lotus Blossom"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Satellite",
+            "Telecom",
+            "Defense"
+        ],
+        "primary_attack_types": [
+            "Living off the land"
+        ],
+        "tools": [
+            "PsExec",
+            "WinSCP"
+        ],
+        "description": "Advanced group targeting satellite communications and geospatial imaging companies."
+    },
+    {
+        "id": "menupass",
+        "name": "MenuPass",
+        "aliases": [
+            "APT10",
+            "Stone Panda"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "MSP",
+            "Manufacturing",
+            "Japanese Corps"
+        ],
+        "primary_attack_types": [
+            "RedLeaves",
+            "PlugX"
+        ],
+        "tools": [
+            "ChChes"
+        ],
+        "description": "Known for the Operation Cloud Hopper campaign affecting MSPs globaly."
+    },
+    {
+        "id": "bronze_butler",
+        "name": "Bronze Butler",
+        "aliases": [
+            "Tick"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Japan Heavy Industry",
+            "Biotech"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "Daserf",
+            "Datper"
+        ],
+        "description": "Focuses heavily on Japanese intellectual property theft."
+    },
+    {
+        "id": "emissary_panda",
+        "name": "Emissary Panda",
+        "aliases": [
+            "APT27",
+            "LuckyMouse",
+            "Iron Tiger"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government",
+            "Defense",
+            "Technology"
+        ],
+        "primary_attack_types": [
+            "Web exploitation",
+            "Watering hole"
+        ],
+        "tools": [
+            "HyperBro",
+            "PlugX"
+        ],
+        "description": "Highly active group targeting government and defense contractors worldwide."
+    },
+    {
+        "id": "temp_periscope",
+        "name": "TEMP.Periscope",
+        "aliases": [
+            "Leviathan",
+            "Mudcarp"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Maritime",
+            "Defense",
+            "Engineering"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "China Chopper",
+            "Seadaddy"
+        ],
+        "description": "Targets the maritime industry and naval defense contractors to support Chinese naval modernization."
+    },
+    {
+        "id": "temp_isotope",
+        "name": "TEMP.Isotope",
+        "aliases": [
+            "Berserk Bear",
+            "Dragonfly 2.0"
+        ],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "State-Sponsored",
+        "targets": [
+            "Energy",
+            "Critical Infrastructure"
+        ],
+        "primary_attack_types": [
+            "Credential harvesting",
+            "Supply chain"
+        ],
+        "tools": [
+            "Goodor",
+            "Dorev"
+        ],
+        "description": "Russian group targeting energy sector in Europe and North America."
+    },
+    {
+        "id": "winnti_group",
+        "name": "Winnti Group",
+        "aliases": [
+            "APT41",
+            "Blackfly"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored / Criminal",
+        "targets": [
+            "Online Gaming",
+            "Pharma",
+            "Tech"
+        ],
+        "primary_attack_types": [
+            "Code signing certificate theft"
+        ],
+        "tools": [
+            "Winnti",
+            "PlugX"
+        ],
+        "description": "Umbrella term for several Chinese groups sharing TTPs and tools like Winnti malware."
+    },
+    {
+        "id": "fin4",
+        "name": "FIN4",
+        "aliases": [],
+        "country": "Unknown",
+        "flag_code": "xx",
+        "category": "Cybercrime",
+        "targets": [
+            "Public Companies",
+            "Healthcare",
+            "Pharma"
+        ],
+        "primary_attack_types": [
+            "Spearphishing",
+            "Market Manipulation"
+        ],
+        "tools": [
+            "VBA Macros",
+            "Tor"
+        ],
+        "description": "Targets confidential information about public companies to use in stock market manipulation schemes."
+    },
+    {
+        "id": "fin5",
+        "name": "FIN5",
+        "aliases": [],
+        "country": "Unknown",
+        "flag_code": "xx",
+        "category": "Cybercrime",
+        "targets": [
+            "Retail",
+            "Hospitality"
+        ],
+        "primary_attack_types": [
+            "POS Malware"
+        ],
+        "tools": [
+            "RawPOS"
+        ],
+        "description": "Cybercrime group specializing in stealing payment card data via Point-of-Sale (POS) malware."
+    },
+    {
+        "id": "fin6",
+        "name": "FIN6",
+        "aliases": [],
+        "country": "Unknown",
+        "flag_code": "xx",
+        "category": "Cybercrime",
+        "targets": [
+            "Retail",
+            "Hospitality"
+        ],
+        "primary_attack_types": [
+            "POS Malware",
+            "Ransomware"
+        ],
+        "tools": [
+            "FrameworkPOS",
+            "Trinity"
+        ],
+        "description": "High-profile cybercrime group known for massive card theft operations."
+    },
+    {
+        "id": "fin8",
+        "name": "FIN8",
+        "aliases": [],
+        "country": "Unknown",
+        "flag_code": "xx",
+        "category": "Cybercrime",
+        "targets": [
+            "Retail",
+            "Hospitality",
+            "Entertainment"
+        ],
+        "primary_attack_types": [
+            "Spearphishing",
+            "POS Malware"
+        ],
+        "tools": [
+            "BadHatch",
+            "ShellTea"
+        ],
+        "description": "Financially motivated group targeting the retail and hospitality sectors."
+    },
+    {
+        "id": "fin10",
+        "name": "FIN10",
+        "aliases": [],
+        "country": "Unknown",
+        "flag_code": "xx",
+        "category": "Cybercrime",
+        "targets": [
+            "Casinos",
+            "Mining"
+        ],
+        "primary_attack_types": [
+            "Ransomware",
+            "Extortion"
+        ],
+        "tools": [
+            "PowerShell",
+            "Meterpreter"
+        ],
+        "description": "Extortion-focused group targeting casinos and mining companies in Canada."
+    },
+    {
+        "id": "fin11",
+        "name": "FIN11",
+        "aliases": [],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "Cybercrime",
+        "targets": [
+            "Financial",
+            "Retail",
+            "Pharma"
+        ],
+        "primary_attack_types": [
+            "Ransomware",
+            "Data Theft"
+        ],
+        "tools": [
+            "Clop",
+            "FlawedAmmyy"
+        ],
+        "description": "Subset of the TA505 group, moved to ransomware operations."
+    },
+    {
+        "id": "cobalt_group",
+        "name": "Cobalt Group",
+        "aliases": [
+            "Cobalt Gang"
+        ],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "Cybercrime",
+        "targets": [
+            "Banks",
+            "ATM Systems"
+        ],
+        "primary_attack_types": [
+            "Spearphishing",
+            "ATM jackpotting"
+        ],
+        "tools": [
+            "Cobalt Strike"
+        ],
+        "description": "Criminal group named after their heavy usage of the Cobalt Strike penetration testing tool."
+    },
+    {
+        "id": "silence_group",
+        "name": "Silence Group",
+        "aliases": [],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "Cybercrime",
+        "targets": [
+            "Banks"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "Silence"
+        ],
+        "description": "Believed to be former security researchers turned cybercriminals targeting financial institutions."
+    },
+    {
+        "id": "moneytaker",
+        "name": "MoneyTaker",
+        "aliases": [],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "Cybercrime",
+        "targets": [
+            "Banks",
+            "Law Firms"
+        ],
+        "primary_attack_types": [
+            "Core banking system attacks"
+        ],
+        "tools": [
+            "MoneyTaker"
+        ],
+        "description": "Sophisticated group capable of attacking core banking systems like SWIFT and AWS CBR."
+    },
+    {
+        "id": "magecart",
+        "name": "Magecart",
+        "aliases": [],
+        "country": "Global",
+        "flag_code": "xx",
+        "category": "Cybercrime",
+        "targets": [
+            "E-commerce"
+        ],
+        "primary_attack_types": [
+            "Digital skimming",
+            "Formjacking"
+        ],
+        "tools": [
+            "JS Skimmers"
+        ],
+        "description": "Umbrella term for various groups injecting malicious scripts into e-commerce checkout pages to steal credit card data."
+    },
+    {
+        "id": "apt2",
+        "name": "APT2",
+        "aliases": [
+            "Putter Panda"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Defense",
+            "Space"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "MsRAT"
+        ],
+        "description": "PLA Unit 61486, targeting space and defense industries."
+    },
+    {
+        "id": "apt4",
+        "name": "APT4",
+        "aliases": [
+            "Maverick Panda"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government",
+            "Defense"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "Sykipot"
+        ],
+        "description": "Targeting US defense industrial base."
+    },
+    {
+        "id": "apt5",
+        "name": "APT5",
+        "aliases": [
+            "Keyhole Panda"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Telecom",
+            "Tech"
+        ],
+        "primary_attack_types": [
+            "VPN Exploitation"
+        ],
+        "tools": [
+            "PoisonIvy"
+        ],
+        "description": "Focuses on telecommunications and technology companies."
+    },
+    {
+        "id": "apt6",
+        "name": "APT6",
+        "aliases": [
+            "1st. Team"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Transportation",
+            "Engineering"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "PoisonIvy",
+            "Beluga"
+        ],
+        "description": "Historical group targeting transportation and engineering sectors."
+    },
+    {
+        "id": "apt7",
+        "name": "APT7",
+        "aliases": [],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Construction",
+            "Engineering"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "Dig.net"
+        ],
+        "description": "Focus on construction and engineering firms."
+    },
+    {
+        "id": "apt8",
+        "name": "APT8",
+        "aliases": [],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Media",
+            "Entertainment"
+        ],
+        "primary_attack_types": [
+            "Social Engineering"
+        ],
+        "tools": [
+            "Haba"
+        ],
+        "description": "Targeting media and entertainment organizations."
+    },
+    {
+        "id": "apt9",
+        "name": "APT9",
+        "aliases": [],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Healthcare",
+            "Pharma"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "Sogu"
+        ],
+        "description": "Focused on healthcare and pharmaceutical intelligence."
+    },
+    {
+        "id": "apt14",
+        "name": "APT14",
+        "aliases": [
+            "Anchor Panda"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Maritime",
+            "Defense"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "PoisonIvy"
+        ],
+        "description": "Satellite and maritime communications targeting."
+    },
+    {
+        "id": "apt15",
+        "name": "APT15",
+        "aliases": [
+            "Ke3chang",
+            "Vixen Panda",
+            "Playful Dragon"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Oil",
+            "Military",
+            "Diplomatic"
+        ],
+        "primary_attack_types": [
+            "Watering hole"
+        ],
+        "tools": [
+            "Mirage",
+            "BS2005"
+        ],
+        "description": "Targeting oil, military, and diplomatic entities."
+    },
+    {
+        "id": "apt20",
+        "name": "APT20",
+        "aliases": [
+            "Violin Panda"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Construction",
+            "Healthcare"
+        ],
+        "primary_attack_types": [
+            "VPN Compromise"
+        ],
+        "tools": [
+            "Qrypter"
+        ],
+        "description": "China-based group utilizing stolen VPN credentials."
+    },
+    {
+        "id": "apt21",
+        "name": "APT21",
+        "aliases": [
+            "Zhenbao"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Dissidents",
+            "Government"
+        ],
+        "primary_attack_types": [
+            "Watering hole"
+        ],
+        "tools": [
+            "Traveler"
+        ],
+        "description": "Targeting Russian government and Chinese dissidents."
+    },
+    {
+        "id": "apt22",
+        "name": "APT22",
+        "aliases": [
+            "Barista"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Dissidents"
+        ],
+        "primary_attack_types": [
+            "Strategic Web Compromise"
+        ],
+        "tools": [
+            "Pisloader"
+        ],
+        "description": "Focused on political dissidents."
+    },
+    {
+        "id": "apt23",
+        "name": "APT23",
+        "aliases": [
+            "Wet Panda"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "PlugX"
+        ],
+        "description": "Targeting government and defense in the US and Philippines."
+    },
+    {
+        "id": "apt24",
+        "name": "APT24",
+        "aliases": [
+            "Pittypat Panda"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government",
+            "Healthcare"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "Pittypat"
+        ],
+        "description": "Compromising government and healthcare organizations."
+    },
+    {
+        "id": "apt25",
+        "name": "APT25",
+        "aliases": [
+            "Unconstrained"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Defense",
+            "Data Aggregators"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "Lurid"
+        ],
+        "description": "Focuses on defense industrial base."
+    },
+    {
+        "id": "apt26",
+        "name": "APT26",
+        "aliases": [
+            "Sushi Express"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Aerospace",
+            "Defense"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "Sifire"
+        ],
+        "description": "Aerospace and defense targeting."
+    },
+    {
+        "id": "apt30",
+        "name": "APT30",
+        "aliases": [],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "ASEAN Governments"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "Backbend",
+            "NetEagle"
+        ],
+        "description": "Long-running espionage campaign against Southeast Asian nations."
+    },
+    {
+        "id": "apt31",
+        "name": "APT31",
+        "aliases": [
+            "Zirconium"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government",
+            "Financial"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "Sips"
+        ],
+        "description": "Targeting government and financial institutions."
+    },
+    {
+        "id": "apt36",
+        "name": "APT36",
+        "aliases": [
+            "Transparent Tribe",
+            "ProjectM"
+        ],
+        "country": "Pakistan",
+        "flag_code": "pk",
+        "category": "State-Sponsored",
+        "targets": [
+            "Indian Defense",
+            "Government"
+        ],
+        "primary_attack_types": [
+            "Spearphishing",
+            "Malicious Documents"
+        ],
+        "tools": [
+            "Crimson RAT"
+        ],
+        "description": "Pakistani group targeting Indian government and military entities."
+    },
+    {
+        "id": "apt37",
+        "name": "APT37",
+        "aliases": [
+            "Reaper",
+            "ScarCruft"
+        ],
+        "country": "North Korea",
+        "flag_code": "kp",
+        "category": "State-Sponsored",
+        "targets": [
+            "South Korea",
+            "Japan",
+            "Vietnam"
+        ],
+        "primary_attack_types": [
+            "Zero-day exploits"
+        ],
+        "tools": [
+            "DOGCALL",
+            "RUHAPPY"
+        ],
+        "description": "North Korean group focusing on defectors and government officials."
+    },
+    {
+        "id": "apt38",
+        "name": "APT38",
+        "aliases": [
+            "Lazarus Subgroup"
+        ],
+        "country": "North Korea",
+        "flag_code": "kp",
+        "category": "State-Sponsored",
+        "targets": [
+            "Financial Institutions"
+        ],
+        "primary_attack_types": [
+            "SWIFT Heists"
+        ],
+        "tools": [
+            "DYEPACK"
+        ],
+        "description": "Financially motivated North Korean subgroup responsible for massive bank heists."
+    },
+    {
+        "id": "apt39",
+        "name": "APT39",
+        "aliases": [
+            "Chafer"
+        ],
+        "country": "Iran",
+        "flag_code": "ir",
+        "category": "State-Sponsored",
+        "targets": [
+            "Telecommunications",
+            "Travel"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "SEAWEED",
+            "REBOUND"
+        ],
+        "description": "Iranian group targeting the travel and telecommunications industries to track individuals."
+    },
+    {
+        "id": "apt40",
+        "name": "APT40",
+        "aliases": [
+            "Leviathan",
+            "Kryptonite Panda"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Maritime",
+            "Defense",
+            "Research"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "BADFLICK",
+            "MURKYTOP"
+        ],
+        "description": "Targeting maritime and defense research in support of China's Belt and Road Initiative."
+    },
+    {
+        "id": "gamaredon_group",
+        "name": "Gamaredon",
+        "aliases": [
+            "Primitive Bear"
+        ],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "State-Sponsored",
+        "targets": [
+            "Ukraine"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "Pterodo"
+        ],
+        "description": "FSB-linked group targeting Ukrainian government and military."
+    },
+    {
+        "id": "blackenergy",
+        "name": "BlackEnergy",
+        "aliases": [
+            "Sandworm"
+        ],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "State-Sponsored",
+        "targets": [
+            "Critical Infrastructure",
+            "Power Grid"
+        ],
+        "primary_attack_types": [
+            "Destructive Malware"
+        ],
+        "tools": [
+            "BlackEnergy"
+        ],
+        "description": "Responsible for power grid attacks in Ukraine."
+    },
+    {
+        "id": "telebots",
+        "name": "TeleBots",
+        "aliases": [
+            "Sandworm"
+        ],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "State-Sponsored",
+        "targets": [
+            "Financial",
+            "Logistics"
+        ],
+        "primary_attack_types": [
+            "Supply Chain (NotPetya)"
+        ],
+        "tools": [
+            "NotPetya",
+            "Industroyer"
+        ],
+        "description": "Evolution of BlackEnergy, responsible for NotPetya."
+    },
+    {
+        "id": "greyenergy",
+        "name": "GreyEnergy",
+        "aliases": [],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "State-Sponsored",
+        "targets": [
+            "Energy"
+        ],
+        "primary_attack_types": [
+            "Reconnaissance"
+        ],
+        "tools": [
+            "GreyEnergy"
+        ],
+        "description": "Successor to BlackEnergy, focusing on stealth."
+    },
+    {
+        "id": "hades",
+        "name": "Hades",
+        "aliases": [],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "State-Sponsored",
+        "targets": [
+            "Political",
+            "Sports"
+        ],
+        "primary_attack_types": [
+            "Leak operations"
+        ],
+        "tools": [
+            "Olympic Destroyer"
+        ],
+        "description": "Associated with the Olympic Destroyer attack."
+    },
+    {
+        "id": "strontium",
+        "name": "STRONTIUM",
+        "aliases": [
+            "APT28"
+        ],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government",
+            "Political"
+        ],
+        "primary_attack_types": [
+            "Credential Harvesting"
+        ],
+        "tools": [
+            "XAgent"
+        ],
+        "description": "Microsoft's name for APT28."
+    },
+    {
+        "id": "zinc",
+        "name": "ZINC",
+        "aliases": [
+            "Lazarus"
+        ],
+        "country": "North Korea",
+        "flag_code": "kp",
+        "category": "State-Sponsored",
+        "targets": [
+            "Defense",
+            "Nuclear"
+        ],
+        "primary_attack_types": [
+            "Social Engineering"
+        ],
+        "tools": [
+            "Manuscrypt"
+        ],
+        "description": "Microsoft's name for Lazarus."
+    },
+    {
+        "id": "iridium",
+        "name": "IRIDIUM",
+        "aliases": [
+            "Sandworm"
+        ],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "State-Sponsored",
+        "targets": [
+            "Industrial"
+        ],
+        "primary_attack_types": [
+            "Destructive"
+        ],
+        "tools": [
+            "Industroyer"
+        ],
+        "description": "Microsoft's name for Sandworm."
+    },
+    {
+        "id": "holmium",
+        "name": "HOLMIUM",
+        "aliases": [
+            "APT33"
+        ],
+        "country": "Iran",
+        "flag_code": "ir",
+        "category": "State-Sponsored",
+        "targets": [
+            "Aerospace",
+            "Energy"
+        ],
+        "primary_attack_types": [
+            "Password Spraying"
+        ],
+        "tools": [
+            "Rulered"
+        ],
+        "description": "Microsoft's name for APT33."
+    },
+    {
+        "id": "mercury",
+        "name": "MERCURY",
+        "aliases": [
+            "MuddyWater"
+        ],
+        "country": "Iran",
+        "flag_code": "ir",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government"
+        ],
+        "primary_attack_types": [
+            "Social Engineering"
+        ],
+        "tools": [
+            "MuddyWater"
+        ],
+        "description": "Microsoft's name for MuddyWater."
+    },
+    {
+        "id": "thallium",
+        "name": "THALLIUM",
+        "aliases": [
+            "Kimsuky"
+        ],
+        "country": "North Korea",
+        "flag_code": "kp",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government",
+            "Think Tanks"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "BabyShark"
+        ],
+        "description": "Microsoft's name for Kimsuky."
+    },
+    {
+        "id": "phosphorus",
+        "name": "PHOSPHORUS",
+        "aliases": [
+            "APT35"
+        ],
+        "country": "Iran",
+        "flag_code": "ir",
+        "category": "State-Sponsored",
+        "targets": [
+            "Journalists",
+            "Activists"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "Charming Kitten"
+        ],
+        "description": "Microsoft's name for APT35."
+    },
+    {
+        "id": "barium_ms",
+        "name": "BARIUM",
+        "aliases": [
+            "APT41"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Supply Chain"
+        ],
+        "primary_attack_types": [
+            "Software Compromise"
+        ],
+        "tools": [
+            "Winnti"
+        ],
+        "description": "Microsoft's name for APT41."
+    },
+    {
+        "id": "gallium",
+        "name": "GALLIUM",
+        "aliases": [
+            "Soft Cell"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Telecom"
+        ],
+        "primary_attack_types": [
+            "Web Shells"
+        ],
+        "tools": [
+            "China Chopper"
+        ],
+        "description": "Targeting telecommunications providers."
+    },
+    {
+        "id": "gadolinium",
+        "name": "GADOLINIUM",
+        "aliases": [
+            "APT40"
+        ],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Maritime"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "CloudHopper"
+        ],
+        "description": "Microsoft's name for APT40."
+    },
+    {
+        "id": "bromine",
+        "name": "BROMINE",
+        "aliases": [],
+        "country": "China",
+        "flag_code": "cn",
+        "category": "State-Sponsored",
+        "targets": [
+            "Government"
+        ],
+        "primary_attack_types": [
+            "Spearphishing"
+        ],
+        "tools": [
+            "Pass-the-hash"
+        ],
+        "description": "Targeting government entities."
+    },
+    {
+        "id": "krypton",
+        "name": "KRYPTON",
+        "aliases": [
+            "Turla"
+        ],
+        "country": "Russia",
+        "flag_code": "ru",
+        "category": "State-Sponsored",
+        "targets": [
+            "Diplomatic"
+        ],
+        "primary_attack_types": [
+            "Satellite Hijacking"
+        ],
+        "tools": [
+            "Snake"
+        ],
+        "description": "Microsoft's name for Turla."
+    }
+]

@@ -1,0 +1,16 @@
+flask
+gunicorn
+wapiti3
+requests
+beautifulsoup4
+apscheduler
+dnspython
+humanize
+sslyze
+python-whois
+feedparser
+androguard
+yara-python
+pyclamd
+scapy
+

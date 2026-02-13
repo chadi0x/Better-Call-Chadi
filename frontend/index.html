@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better Call Chadi - SOC Dashboard</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="//unpkg.com/globe.gl@2.27.2/dist/globe.gl.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Intro Overlay -->
+    <div id="intro-overlay">
+        <div class="intro-text"></div>
+    </div>
+
+    <div class="app-container" id="app">
+        <!-- Sidebar -->
+        <aside class="app-sidebar">
+            <div class="logo-area">
+                <i class="fas fa-biohazard logo-icon fa-spin-pulse"></i>
+                <div class="logo-text">Better Call Chadi</div>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active secure-tab" data-tab="scanner" draggable="false">
+                        <i class="fas fa-satellite-dish"></i> Scanner
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link secure-tab" data-tab="engineer" draggable="false">
+                        <i class="fas fa-cogs"></i> Engineer Mode
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link secure-tab" data-tab="wall" draggable="false">
+                        <i class="fas fa-ghost"></i> Behind the Wall
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link secure-tab" data-tab="groups" draggable="false">
+                        <i class="fas fa-user-secret"></i> Threat Groups
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link secure-tab" data-tab="news" draggable="false">
+                        <i class="fas fa-newspaper"></i> Intel Feed
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link secure-tab" data-tab="forensics" draggable="false">
+                        <i class="fas fa-search"></i> Forensics
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link secure-tab" data-tab="live" draggable="false">
+                        <i class="fas fa-globe-americas"></i> Live Map
+                    </a>
+                </li>
+            </ul>
+
+            <div style="margin-top: auto; padding: 24px;">
+                <div class="neo-card" style="margin:0; padding:15px;">
+                    <h6 class="font-tech text-cyan" style="font-size:0.7rem; margin-bottom:10px;">SYSTEM HEALTH</h6>
+                    <div style="font-size: 0.75rem;">
+                        <div style="display:flex; justify-content:space-between; margin-bottom:5px;">
+                            <span>PYTHON</span> <span id="status-python" class="text-lime">...</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; margin-bottom:5px;">
+                            <span>RUST</span> <span id="status-rust" class="text-lime">...</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between;">
+                            <span>JAVA</span> <span id="status-java" class="text-lime">...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Header -->
+        <header class="app-header">
+            <div class="breadcrumbs font-mono">
+                SYSTEM / <span id="page-title" class="text-cyan">SCANNER</span>
+            </div>
+
+            <div class="status-bar">
+                <div class="status-item font-mono">
+                    <i class="fas fa-crosshairs text-magenta"></i>
+                    <span id="active-scans-count">0</span> Active Scans
+                </div>
+                <div class="status-item font-mono">
+                    <i class="fas fa-clock"></i>
+                    <span id="system-time">00:00:00</span>
+                </div>
+                <div class="user-profile secure-brand-container" id="protected-branding">
+                    <div class="user-text text-end">
+                        <div style="font-size:0.85rem; font-weight:600;" class="secure-text">chadi0x</div>
+                        <a href="https://github.com/chadi0x" target="_blank" class="secure-brand-link"
+                            style="font-size:0.7rem; color:var(--c-text-secondary); text-decoration:none;"
+                            draggable="false">
+                            <i class="fab fa-github"></i> github.com/chadi0x
+                        </a>
+                    </div>
+                    <a href="https://github.com/chadi0x" target="_blank" class="user-avatar secure-brand-link"
+                        style="text-decoration:none; display:flex; align-items:center; justify-content:center;"
+                        draggable="false">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="app-main">
+
+            <!-- LIVE MAP TAB (3D GLOBE) -->
+            <div id="tab-live" class="tab-pane h-100 d-none" style="position:relative; overflow: hidden;">
+
+                <!-- Globe Viz Container -->
+                <div id="globe-viz" class="h-100" style="background: #000;"></div>
+
+                <!-- Overlay: Stats/Tools -->
+                <div class="neo-card p-3"
+                    style="position: absolute; top: 20px; left: 20px; width: 300px; z-index: 1000; background: rgba(5,8,16,0.85); backdrop-filter: blur(10px);">
+                    <h5 class="font-tech text-magenta mb-3"><i class="fas fa-biohazard"></i> ACTIVE THREATS</h5>
+                    <div id="live-tools-list" class="font-mono small" style="max-height: 250px; overflow-y: auto;">
+                        <div class="text-secondary">Initializing Threat Stream...</div>
+                    </div>
+                </div>
+
+                <!-- Overlay: Legend/Info -->
+                <div class="neo-card p-3"
+                    style="position: absolute; bottom: 20px; right: 20px; width: 350px; z-index: 1000; background: rgba(5,8,16,0.85); backdrop-filter: blur(10px);">
+                    <h5 class="font-tech text-cyan mb-2"><i class="fas fa-globe"></i> GLOBAL INTELLIGENCE</h5>
+                    <div class="font-mono x-small mb-2 text-secondary">REAL-TIME EVENTS:</div>
+
+                    <ul id="live-feed-list" class="list-unstyled font-mono small"
+                        style="max-height: 200px; overflow-y: hidden; position: relative;">
+                        <!-- JS Populated -->
+                        <li class="d-flex justify-content-between mb-1 text-secondary">Initializing Feed...</li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-2 small text-white mt-3 border-top border-secondary pt-2">
+                        <span
+                            style="width:10px; height:10px; background:#ff3333; border-radius:50%; box-shadow:0 0 8px #f00;"></span>
+                        Malware
+                        <span class="ms-2"
+                            style="width:10px; height:2px; background:linear-gradient(90deg, #00f3ff, transparent);"></span>
+                        Attack
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <!-- SCANNER TAB -->
+            <div id="tab-scanner" class="tab-pane active">
+                <div style="display: grid; grid-template-columns: 350px 1fr; gap: 24px;">
+
+                    <!-- Left Column: Controls -->
+                    <div class="scanner-controls">
+                        <div class="neo-card">
+                            <div class="card-header-tech">
+                                <h3 class="card-title"><i class="fas fa-rocket text-cyan"></i> New Scan</h3>
+                            </div>
+                            <form id="scan-form">
+                                <div class="mb-3" style="margin-bottom:15px;">
+                                    <label class="font-mono"
+                                        style="font-size:0.8rem; display:block; margin-bottom:5px;">TARGET URL /
+                                        IP</label>
+                                    <input type="text" class="neo-input" placeholder="e.g. 192.168.1.1 or example.com">
+                                </div>
+                                <div class="mb-3" style="margin-bottom:15px;">
+                                    <label class="font-mono"
+                                        style="font-size:0.8rem; display:block; margin-bottom:5px;">PROFILE</label>
+                                    <select class="neo-select">
+                                        <option value="quick">Quick Scan (HTTP)</option>
+                                        <option value="full">Full Vulnerability Scan</option>
+                                        <option value="stealth">Stealth / Low Noise</option>
+                                        <option value="sqli">SQL Injection Specific</option>
+                                        <option value="xss">XSS Specific (Cross-Site Scripting)</option>
+                                        <option value="critical">Critical Risks Only (RCE, LFI)</option>
+                                        <option value="aggressive">Aggressive / High Noise</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3" style="margin-bottom:20px;">
+                                    <label class="font-mono"
+                                        style="font-size:0.8rem; display:block; margin-bottom:5px;">SCOPE</label>
+                                    <div style="display:flex; gap:10px;">
+                                        <label style="font-size:0.8rem; cursor:pointer;"><input type="checkbox"
+                                                name="scope" value="web" checked> Web</label>
+                                        <label style="font-size:0.8rem; cursor:pointer;"><input type="checkbox"
+                                                name="scope" value="api"> API</label>
+                                        <label style="font-size:0.8rem; cursor:pointer;"><input type="checkbox"
+                                                name="scope" value="infra"> Infra</label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="neo-btn neo-btn-primary" style="width:100%;">
+                                    INITIATE SCAN
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Toolkit: Subdomains, Crawler, Ports, Payloads -->
+                        <div class="neo-card">
+                            <div class="card-header-tech">
+                                <h3 class="card-title"><i class="fas fa-toolbox text-magenta"></i> Toolkit</h3>
+                            </div>
+                            <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:10px;">
+                                <button class="neo-btn" onclick="openToolModal('subdomain')">
+                                    <i class="fas fa-sitemap"></i> Subdomains
+                                </button>
+                                <button class="neo-btn" onclick="openToolModal('crawler')">
+                                    <i class="fas fa-spider"></i> Crawler
+                                </button>
+                                <button class="neo-btn" onclick="openToolModal('ports')">
+                                    <i class="fas fa-network-wired"></i> Port Scan
+                                </button>
+                                <button class="neo-btn" onclick="openToolModal('payloads')">
+                                    <i class="fas fa-biohazard"></i> Payloads
+                                </button>
+                                <button class="neo-btn" onclick="openToolModal('whois')">
+                                    <i class="fas fa-id-card"></i> Whois Lookup
+                                </button>
+                                <button class="neo-btn" onclick="openToolModal('dns')">
+                                    <i class="fas fa-server"></i> DNS Records
+                                </button>
+                                <button class="neo-btn" onclick="openToolModal('headers')">
+                                    <i class="fas fa-shield-alt"></i> Header Check
+                                </button>
+                                <button class="neo-btn" onclick="openToolModal('ssl')">
+                                    <i class="fas fa-lock"></i> SSL Inspector
+                                </button>
+                                <button class="neo-btn" onclick="openToolModal('tech')">
+                                    <i class="fas fa-microchip"></i> Tech Stack
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Results -->
+                    <div class="scanner-results">
+
+                        <!-- Active Scans -->
+                        <div class="neo-card">
+                            <div class="card-header-tech">
+                                <h3 class="card-title"><i class="fas fa-satellite-dish text-lime"></i> Active Operations
+                                </h3>
+                            </div>
+                            <table class="neo-table">
+                                <thead>
+                                    <tr>
+                                        <th>Target</th>
+                                        <th>Profile</th>
+                                        <th>Status</th>
+                                        <th>Findings</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="active-scans-body">
+                                    <!-- Populated by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Findings -->
+                        <div class="neo-card">
+                            <div class="card-header-tech">
+                                <h3 class="card-title"><i class="fas fa-shield-virus text-magenta"></i> Vulnerabilities
+                                    Detected</h3>
+                            </div>
+                            <table class="neo-table">
+                                <thead>
+                                    <tr>
+                                        <th>Severity</th>
+                                        <th>Vulnerability</th>
+                                        <th>Endpoint</th>
+                                        <th>Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="findings-body">
+                                    <!-- Populated by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- PLACEHOLDER TABS -->
+            <!-- ENGINEER MODE TAB -->
+            <!-- ENGINEER MODE TAB -->
+            <div id="tab-engineer" class="tab-pane d-none">
+                <!-- Sub-Navigation -->
+                <div class="row justify-content-center mb-4">
+                    <div class="col-md-8">
+                        <div class="neo-card p-2 d-flex justify-content-center gap-3"
+                            style="background: rgba(0,0,0,0.5);">
+                            <button class="neo-btn neo-btn-primary active" id="btn-eng-scanner"><i
+                                    class="fas fa-microchip"></i> BINARY
+                                SCANNER</button>
+                            <button class="neo-btn" id="btn-eng-wordlist"><i class="fas fa-key"></i> WORDLIST
+                                GEN</button>
+                            <button class="neo-btn" id="btn-eng-pcap"><i class="fas fa-network-wired"></i> PCAP
+                                ANALYZER</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1. SCANNER SUB-TAB -->
+                <div id="eng-sub-scanner" class="row justify-content-center eng-subtab">
+                    <div class="col-md-8">
+                        <div class="neo-card text-center p-5 mb-4">
+                            <h2 class="text-cyan font-tech mb-3"><i class="fas fa-biohazard"></i> BINARY INSPECTOR</h2>
+                            <p class="text-secondary mb-4">Upload binaries (.exe, .dll, .sh) for static analysis,
+                                hashing, and YARA scanning.</p>
+
+                            <div id="engineer-upload-area"
+                                style="border: 2px dashed var(--c-border); padding: 40px; border-radius: 8px; cursor: pointer; transition: all 0.3s;"
+                                onclick="document.getElementById('engineer-file-input').click()">
+                                <i class="fas fa-upload fa-4x text-cyan mb-3"></i>
+                                <h4 class="text-white">DROP FILE OR CLICK TO UPLOAD</h4>
+                                <p class="text-secondary font-mono">Max size: 100MB</p>
+                            </div>
+                            <input type="file" id="engineer-file-input" style="display: none;"
+                                onchange="uploadEngineerFile()">
+                        </div>
+
+                        <div id="engineer-results" class="neo-card d-none text-start">
+                            <div class="card-header-tech">
+                                <h3 class="card-title text-lime">SCAN RESULTS</h3>
+                                <button class="neo-btn" onclick="clearEngineerResults()">RESET</button>
+                            </div>
+                            <div id="engineer-report-content" class="p-4"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. WORDLIST GEN SUB-TAB -->
+                <div id="eng-sub-wordlist" class="row justify-content-center eng-subtab d-none">
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="neo-card p-4 h-100">
+                                    <h4 class="text-white font-tech mb-3"><i class="fas fa-cogs"></i> CONFIGURATION</h4>
+
+                                    <div class="mb-3">
+                                        <label class="font-mono text-cyan mb-2 d-block">CHARSETS</label>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <label><input type="checkbox" id="wl-lower" checked> a-z</label>
+                                            <label><input type="checkbox" id="wl-upper" checked> A-Z</label>
+                                            <label><input type="checkbox" id="wl-digits" checked> 0-9</label>
+                                            <label><input type="checkbox" id="wl-symbols"> !@#</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-6">
+                                            <label class="font-mono text-secondary">MIN LEN</label>
+                                            <input type="number" id="wl-min" class="neo-input" value="4" min="1"
+                                                max="20">
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="font-mono text-secondary">MAX LEN</label>
+                                            <input type="number" id="wl-max" class="neo-input" value="8" min="1"
+                                                max="20">
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="font-mono text-secondary">PATTERN (Optional, use # for digit, @
+                                            for char)</label>
+                                        <input type="text" id="wl-pattern" class="neo-input" placeholder="Pass####">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="font-mono text-secondary">BASE WORDS (One per line)</label>
+                                        <textarea id="wl-base" class="neo-input" rows="5"
+                                            placeholder="admin&#10;company&#10;user"></textarea>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label><input type="checkbox" id="wl-leet"> LEETSPEAK MUTATION (4dm1n)</label>
+                                    </div>
+
+                                    <button class="neo-btn neo-btn-primary w-100" onclick="generateWordlist()">GENERATE
+                                        LIST</button>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="neo-card p-4 h-100 position-relative">
+                                    <h4 class="text-lime font-tech mb-3">OUTPUT PREVIEW</h4>
+                                    <div id="wl-preview" class="font-mono p-3"
+                                        style="background:rgba(0,0,0,0.3); height:300px; overflow-y:auto; color:#fff; border:1px solid var(--c-border);">
+                                        <span class="text-secondary">Waiting for generation...</span>
+                                    </div>
+                                    <div id="wl-actions" class="mt-3 d-none">
+                                        <a id="wl-download-btn" href="#" class="neo-btn w-100 text-center"
+                                            target="_blank"><i class="fas fa-download"></i> DOWNLOAD FULL LIST
+                                            (.TXT)</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. PCAP ANALYZER SUB-TAB -->
+                <div id="eng-sub-pcap" class="row justify-content-center eng-subtab d-none">
+                    <div class="col-md-10">
+                        <div class="neo-card text-center p-5 mb-4" id="pcap-upload-card">
+                            <h2 class="text-magenta font-tech mb-3"><i class="fas fa-wifi"></i> PACKET ANALYZER</h2>
+                            <p class="text-secondary mb-4">Deep inspect .pcap or .pcapng files for anomalies, protocols,
+                                and threats.</p>
+
+                            <div id="pcap-upload-area"
+                                style="border: 2px dashed var(--c-neon-magenta); padding: 40px; border-radius: 8px; cursor: pointer; transition: all 0.3s; background: rgba(188, 19, 254, 0.05);"
+                                onclick="document.getElementById('pcap-file-input').click()">
+                                <i class="fas fa-network-wired fa-4x text-magenta mb-3"></i>
+                                <h4 class="text-white">UPLOAD PACKET CAPTURE</h4>
+                                <p class="text-secondary font-mono">Max size: 50MB</p>
+                            </div>
+                            <input type="file" id="pcap-file-input" style="display: none;" onchange="uploadPcapFile()">
+                        </div>
+
+                        <!-- PCAP Results -->
+                        <div id="pcap-results" class="d-none animate-in">
+                            <div class="neo-card p-3 mb-3 border-left-cyan">
+                                <div class="row align-items-center">
+                                    <div class="col-8">
+                                        <h4 class="text-white mb-0">PACKET ANALYSIS COMPLETE</h4>
+                                        <div class="font-mono text-secondary small">Processed <span id="pcap-count"
+                                                class="text-white">0</span> frames</div>
+                                    </div>
+                                    <div class="col-4 text-end">
+                                        <span class="badge bg-secondary p-2" id="pcap-alerts-count">0
+                                            ALERTS</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="neo-card p-3 h-100">
+                                        <h5 class="text-cyan font-tech mb-3">PROTOCOL DISTRIBUTION</h5>
+                                        <div id="pcap-protos"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="neo-card p-3 h-100">
+                                        <h5 class="text-lime font-tech mb-3">CONVERSATIONS</h5>
+                                        <div class="table-responsive" style="max-height: 250px;">
+                                            <table class="table table-dark table-hover table-sm font-mono">
+                                                <thead>
+                                                    <tr class="text-secondary small">
+                                                        <th>SOURCE &rarr; DESTINATION</th>
+                                                        <th>PROTO</th>
+                                                        <th class="text-end">PACKETS</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="pcap-talkers-body">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="neo-card p-3 h-100">
+                                        <h5 class="text-magenta font-tech mb-3">EXTRACTED ARTIFACTS</h5>
+                                        <div id="pcap-extracted" style="max-height: 300px; overflow-y: auto;">
+                                            <div class="text-secondary small">Analysis pending...</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="neo-card p-3 h-100">
+                                        <h5 class="text-orange font-tech mb-3">THREAT INTELLIGENCE</h5>
+                                        <div id="pcap-suspicious" style="max-height: 300px; overflow-y: auto;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="neo-btn mt-3 w-100" onclick="resetPcap()">UPLOAD ANOTHER FILE</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- END tab-engineer -->
+
+            <!-- BEHIND THE WALL TAB -->
+            <div id="tab-wall" class="tab-pane d-none">
+                <div class="row">
+                    <!-- Tool 1: Malware Evasion -->
+                    <div class="col-md-6 mb-4">
+                        <div class="neo-card h-100 p-4">
+                            <h3 class="card-title text-magenta"><i class="fas fa-mask"></i> SHADOW CLOAK (EVASION)</h3>
+                            <p class="text-secondary small mb-3">Obfuscate scripts and binaries to bypass static
+                                analysis.</p>
+
+                            <div class="mb-3">
+                                <label class="font-mono text-white mb-2">UPLOAD PAYLOAD (.sh, .py, .exe)</label>
+                                <input type="file" id="evade-file"
+                                    class="form-control bg-dark text-white border-secondary">
+                            </div>
+
+                            <button class="neo-btn w-100" onclick="evadeMalware()">
+                                <i class="fas fa-magic"></i> OBFUSCATE & DOWNLOAD
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tool 2: Phishing Campaign -->
+                    <div class="col-md-6 mb-4">
+                        <div class="neo-card h-100 p-4">
+                            <h3 class="card-title text-orange"><i class="fas fa-fish"></i> SOCIAL ENGINEER</h3>
+                            <p class="text-secondary small mb-3">Generate professional phishing templates with tracking.
+                            </p>
+
+                            <div class="mb-2">
+                                <label class="text-secondary small">PLATFORM</label>
+                                <select id="phish-platform" class="neo-select w-100" onchange="updatePhishScenarios()">
+                                    <option value="">Select Platform...</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <label class="text-secondary small">SCENARIO</label>
+                                <select id="phish-scenario" class="neo-select w-100" disabled>
+                                    <option value="">Select Platform First</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <label class="text-secondary small">TARGET EMAIL</label>
+                                <input type="email" id="phish-target" class="neo-input w-100"
+                                    placeholder="victim@target.com">
+                            </div>
+                            <div class="mb-3">
+                                <label class="text-secondary small">MALICIOUS LINK</label>
+                                <input type="text" id="phish-link" class="neo-input w-100"
+                                    placeholder="https://evil.com/login">
+                            </div>
+
+                            <button class="neo-btn w-100" onclick="generatePhish()">
+                                <i class="fas fa-envelope-open-text"></i> GENERATE EMAIL
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tool 3: Proxy Scraper -->
+                    <div class="col-md-6 mb-4">
+                        <div class="neo-card h-100 p-4">
+                            <h3 class="card-title text-cyan"><i class="fas fa-network-wired"></i> GHOST PROXIES</h3>
+                            <button class="neo-btn w-100 mb-3" onclick="scrapeProxies()">
+                                <i class="fas fa-search-location"></i> SCRAPE & TEST
+                            </button>
+
+                            <div class="table-responsive" style="max-height: 300px; overflow-y: auto;">
+                                <table class="table table-dark table-sm font-mono small">
+                                    <thead>
+                                        <tr>
+                                            <th>COUNTRY</th>
+                                            <th>IP:PORT</th>
+                                            <th>TYPE</th>
+                                            <th>LATENCY</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="proxy-list"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tool 4: VPN Grabber -->
+                    <div class="col-md-6 mb-4">
+                        <div class="neo-card h-100 p-4">
+                            <h3 class="card-title text-lime"><i class="fas fa-globe"></i> VPN GATE GRABBER</h3>
+                            <div class="input-group mb-3">
+                                <input type="text" id="vpn-country" class="neo-input"
+                                    placeholder="Country (e.g., JP, US)">
+                                <button class="neo-btn" onclick="fetchVpnConfigs()">FETCH</button>
+                            </div>
+
+                            <div id="vpn-list" style="max-height: 200px; overflow-y: auto;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- THREAT GROUPS TAB -->
+            <div id="tab-groups" class="tab-pane d-none">
+                <div class="neo-card" style="margin-bottom: 20px;">
+                    <div class="card-header-tech">
+                        <h3 class="card-title"><i class="fas fa-search text-cyan"></i> Threat Intelligence Database</h3>
+                    </div>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <input type="text" id="group-search" class="neo-input"
+                            placeholder="Search groups, aliases, tools..." style="flex: 2; min-width: 250px;">
+
+                        <select id="group-country" class="neo-select" style="flex: 1; min-width: 150px;">
+                            <option value="">All Countries</option>
+                            <option value="China">China</option>
+                            <option value="Russia">Russia</option>
+                            <option value="Iran">Iran</option>
+                            <option value="North Korea">North Korea</option>
+                            <option value="Vietnam">Vietnam</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Unknown">Unknown/Criminal</option>
+                        </select>
+
+                        <select id="group-category" class="neo-select" style="flex: 1; min-width: 150px;">
+                            <option value="">All Categories</option>
+                            <option value="State-Sponsored">State-Sponsored</option>
+                            <option value="Cybercrime">Cybercrime</option>
+                            <option value="Unknown">Unknown</option>
+                        </select>
+
+                        <button class="neo-btn neo-btn-primary" onclick="searchGroups()">
+                            <i class="fas fa-search"></i> FILTER
+                        </button>
+                    </div>
+                </div>
+
+                <div id="groups-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+                    <!-- Populated by JS -->
+                    <div class="neo-card text-center p-4">
+                        <i class="fas fa-circle-notch fa-spin text-cyan fa-2x"></i>
+                        <p class="mt-3 text-secondary">Loading Threat Data...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEWS TAB -->
+            <div id="tab-news" class="tab-pane d-none">
+                <div class="neo-card" style="margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="card-header-tech" style="margin-bottom: 0;">
+                            <h3 class="card-title"><i class="fas fa-rss text-orange" style="color:#ff9f43"></i> Global
+                                Threat Intelligence Feed</h3>
+                        </div>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <span class="text-secondary font-mono" style="font-size: 0.8rem;">LAST UPDATED: <span
+                                    id="feed-last-updated" class="text-lime">NEVER</span></span>
+                            <button class="neo-btn" onclick="refreshIntelFeed()">
+                                <i class="fas fa-sync-alt"></i> REFRESH
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="neo-card">
+                    <div class="mb-3" style="display: flex; gap: 10px;">
+                        <button class="neo-btn active-filter" onclick="filterFeed('all', this)"
+                            id="filter-all">ALL</button>
+                        <button class="neo-btn" onclick="filterFeed('exploit', this)">EXPLOITS</button>
+                        <button class="neo-btn" onclick="filterFeed('cve', this)">CVEs</button>
+                        <button class="neo-btn" onclick="filterFeed('ransomware', this)">RANSOMWARE</button>
+                        <button class="neo-btn" onclick="filterFeed('advisory', this)">ADVISORIES</button>
+                    </div>
+
+                    <div id="intel-feed-container" class="font-mono"
+                        style="height: 65vh; overflow-y: auto; padding-right: 10px;">
+                        <!-- Populated by JS -->
+                        <div class="text-center p-5">
+                            <i class="fas fa-satellite-dish fa-spin fa-2x text-secondary"></i>
+                            <p class="text-secondary mt-3">Establishing satellite uplink...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORENSICS TAB -->
+            <div id="tab-forensics" class="tab-pane d-none">
+                <div class="grid-2-col"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                    <!-- APK Forensics -->
+                    <div class="neo-card">
+                        <div class="card-header-tech">
+                            <h3 class="card-title"><i class="fab fa-android text-lime"></i> APK Forensics</h3>
+                        </div>
+                        <div class="p-3 text-center">
+                            <div id="apk-upload-area"
+                                style="border: 2px dashed var(--c-border); padding: 30px; border-radius: 8px; cursor: pointer;"
+                                onclick="document.getElementById('apk-file-input').click()">
+                                <i class="fas fa-file-upload fa-3x text-secondary mb-3"></i>
+                                <p class="text-white">Click to Upload .APK</p>
+                                <p class="text-secondary" style="font-size: 0.8rem;">Static Analysis • Permissions •
+                                    Manifest</p>
+                            </div>
+                            <input type="file" id="apk-file-input" style="display: none;" accept=".apk"
+                                onchange="uploadAPK()">
+                        </div>
+                    </div>
+
+                    <!-- Endpoint Forensics -->
+                    <div class="neo-card">
+                        <div class="card-header-tech">
+                            <h3 class="card-title"><i class="fab fa-windows text-cyan"></i> Endpoint Triage</h3>
+                        </div>
+                        <div class="p-3">
+                            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                                <button class="neo-btn" style="flex: 1;" onclick="downloadScript('windows')"><i
+                                        class="fab fa-windows"></i> GET .BAT</button>
+                                <button class="neo-btn" style="flex: 1;" onclick="downloadScript('linux')"><i
+                                        class="fab fa-linux"></i> GET .SH</button>
+                            </div>
+                            <hr style="border-color: var(--c-border);">
+                            <div id="triage-upload-area"
+                                style="border: 2px dashed var(--c-border); padding: 20px; border-radius: 8px; cursor: pointer; text-align: center; margin-top: 15px;"
+                                onclick="document.getElementById('triage-file-input').click()">
+                                <i class="fas fa-file-archive fa-2x text-secondary mb-2"></i>
+                                <p class="text-white">Upload Triage Output</p>
+                                <p class="text-secondary" style="font-size: 0.7rem;">.txt logs or .zip archives</p>
+                            </div>
+                            <input type="file" id="triage-file-input" style="display: none;" onchange="uploadTriage()">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Area -->
+                <div id="forensics-results" class="neo-card d-none">
+                    <div class="card-header-tech">
+                        <h3 class="card-title"><i class="fas fa-microscope text-magenta"></i> Analysis Report</h3>
+                        <button class="neo-btn" onclick="clearForensicsResults()">XXX CLEAR</button>
+                    </div>
+                    <div id="report-content" class="p-3">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script>
+        // --- Anti-Tamper Security ---
+        (function () {
+            // 1. Prevent Right-Click on Protected Elements
+            document.addEventListener('contextmenu', function (e) {
+                if (e.target.closest('.secure-brand-container') || e.target.closest('.secure-tab')) {
+                    e.preventDefault();
+                    console.log("%c STOP! This area is protected.", "color: red; font-size: 20px; font-weight: bold;");
+                    return false;
+                }
+            });
+
+            // 2. Prevent Dragging
+            document.addEventListener('dragstart', function (e) {
+                if (e.target.closest('.secure-brand-container') || e.target.closest('.secure-tab')) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+
+            // 3. DevTools discourage (simulated)
+            document.addEventListener('keydown', function (e) {
+                // F12 or Ctrl+Shift+I
+                if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                    // We can't actually BLOCK it in all browsers, but we can try
+                    // e.preventDefault(); 
+                    // e.stopPropagation();
+                    // Optional: Trigger a warning or debugger breakpoint
+                    // debugger; 
+                }
+            });
+
+            // 4. MutationObserver for Branding
+            const targetNode = document.getElementById('protected-branding');
+            const expectedHTML = targetNode ? targetNode.innerHTML : ""; // Capture initial state
+
+            if (targetNode) {
+                const config = { attributes: true, childList: true, subtree: true, characterData: true };
+                const callback = function (mutationsList, observer) {
+                    for (const mutation of mutationsList) {
+                        // If legitimate update from our own scripts, ignore (if any).
+                        // But here we want strict locking.
+
+                        // Simple Restore Logic:
+                        // Disconnect, Restore, Reconnect
+                        observer.disconnect();
+                        targetNode.innerHTML = expectedHTML;
+                        // Log attempt
+                        console.warn("Tampering detected on Branding! Restoring original content.");
+                        observer.observe(targetNode, config);
+                    }
+                };
+                const observer = new MutationObserver(callback);
+                observer.observe(targetNode, config);
+            }
+
+            // Lock Tab Names (MutationObserver for Sidebar)
+            // This is more aggressive, use with caution if tabs change class dynamically
+            // const sidebarNav = document.querySelector('.nav-menu');
+            // if (sidebarNav) {
+            //     // Similar observer logic could go here if needed.
+            // }
+
+        })();
+    </script>
+    <!-- Details Modal -->
+    <div id="details-modal" class="modal-overlay" style="display:none;">
+        <div class="neo-card modal-content" style="max-width: 600px; margin: 100px auto;">
+            <div class="card-header-tech">
+                <h3 class="card-title text-cyan" id="modal-title">Finding Details</h3>
+                <button class="neo-btn" onclick="closeModal()">X</button>
+            </div>
+            <div class="modal-body p-3">
+                <p class="font-mono text-secondary mb-2">SEVERITY: <span id="modal-severity"></span></p>
+                <p class="font-mono text-secondary mb-2">ENDPOINT: <span id="modal-endpoint" class="text-white"></span>
+                </p>
+                <hr style="border-color: var(--c-border);">
+                <h5 class="font-tech text-magenta mt-3">DESCRIPTION</h5>
+                <p id="modal-desc" class="text-white" style="font-size: 0.9rem;"></p>
+                <h5 class="font-tech text-lime mt-3">EVIDENCE</h5>
+                <div class="p-2" style="background: rgba(0,0,0,0.3); border: 1px solid var(--c-border);">
+                    <code id="modal-evidence" class="text-cyan font-mono" style="word-break: break-all;"></code>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tool Modal -->
+    <div id="tool-modal" class="modal-overlay" style="display:none;">
+        <div class="neo-card modal-content"
+            style="max-width: 700px; margin: 80px auto; max-height: 80vh; overflow-y:auto;">
+            <div class="card-header-tech">
+                <h3 class="card-title text-cyan" id="tool-modal-title">Tool Name</h3>
+                <button class="neo-btn" onclick="closeToolModal()">X</button>
+            </div>
+            <div class="modal-body p-3">
+                <div id="tool-controls" class="mb-3">
+                    <!-- Dynamic Controls -->
+                </div>
+                <div id="tool-results" class="font-mono text-secondary"
+                    style="white-space: pre-wrap; background: rgba(0,0,0,0.3); padding:10px; border:1px solid var(--c-border);">
+                    Waiting for input...
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Group Details Modal -->
+    <div id="group-modal" class="modal-overlay" style="display:none;">
+        <div class="neo-card modal-content"
+            style="max-width: 800px; margin: 60px auto; max-height: 90vh; overflow-y:auto;">
+            <div class="card-header-tech">
+                <h3 class="card-title text-cyan" id="group-modal-title">Group Name</h3>
+                <button class="neo-btn" onclick="closeGroupModal()">X</button>
+            </div>
+            <div class="modal-body p-4">
+                <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
+                    <div id="group-flag-large"
+                        style="font-size: 3rem; background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px;">🏳️
+                    </div>
+                    <div>
+                        <h2 id="group-name-large" class="text-white" style="margin: 0 0 5px 0;">APT Name</h2>
+                        <div id="group-aliases" class="text-secondary font-mono" style="font-size: 0.9rem;">Aliases: ...
+                        </div>
+                        <div style="margin-top: 10px;">
+                            <span id="group-category-tag" class="severity-chip severity-high">CATEGORY</span>
+                            <span id="group-country-tag" class="severity-chip severity-low">COUNTRY</span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="border-color: var(--c-border); margin: 20px 0;">
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <h5 class="font-tech text-magenta">DESCRIPTION</h5>
+                        <p id="group-description" class="text-white" style="font-size: 0.95rem; line-height: 1.5;"></p>
+                    </div>
+                    <div>
+                        <h5 class="font-tech text-lime">OPERATIONAL TOOLKIT</h5>
+                        <div id="group-tools" style="display: flex; flex-wrap: wrap; gap: 5px;">
+                            <!-- populated by JS -->
+                        </div>
+
+                        <h5 class="font-tech text-cyan mt-4">COMMON TARGETS</h5>
+                        <ul id="group-targets" class="text-secondary font-mono" style="padding-left: 20px;">
+                            <!-- populated by JS -->
+                        </ul>
+                    </div>
+                </div>
+
+                <h5 class="font-tech text-orange mt-4" style="color: #ffa500;">PRIMARY ATTACK TYPES / TTPs</h5>
+                <div id="group-ttps" style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <!-- populated by JS -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
