@@ -17,7 +17,7 @@
 ```
 
 # 🚀 BETTER CALL CHADI 🚀
-### The Ultimate Dashboard & Pentesting Toolkit
+### The Ultimate Dark SOC Dashboard & Pentesting Toolkit
 
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Flask](https://img.shields.io/badge/Flask-2.3.2-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
@@ -28,7 +28,8 @@
 
 > **"Stop staring at terminal output. Start visualizing the battlefield."**
 
-**Better Call Chadi** transforms your browser into a command center for Penetration Testing, Red Teaming, and Threat Intelligence. Built with a responsive **Cyberpunk** aesthetic, it combines powerful scanners, offensive engineering tools, and real-time 3D visualization into one unified platform.
+**Better Call Chadi** transforms your browser into a command center for Penetration Testing, Red Teaming, and Threat Intelligence. Built with a responsive **Dark Mode** aesthetic, it combines powerful scanners, offensive engineering tools, and real-time 3D visualization into one unified platform.
+**You have the key now. Welcome back, Neo. Install and surf with it.**
 
 [Features](#-features) • [Screenshots](#-screenshots) • [Installation](#-installation) • [Usage](#-usage)
 
@@ -51,9 +52,10 @@ Analyze artifacts and generate payloads.
 - [x] **Wordlist Generator**: Create intelligent custom wordlists based on target patterns.
 
 ### 🕶️ 3. Behind the Wall (Red Team)
-Offensive tools for the modern operator.
+Offensive tools for the modern operator. You are safe with the devil here.
 - [x] **Social Engineer**: High-fidelity phishing template generator with scenario support.
-- [x] **Ghost Proxies**: Real-time proxy scraper & tester.
+- [x] **Ghost Proxies**: Direct working proxies in seconds.
+- [x] **VPN Gate**: Fast VPN configs ready to go. (User: `vpn` | Pass: `vpn`)
 - [x] **Shadow Cloak**: Payload obfuscation techniques.
 
 ### 🌍 4. Global Intelligence (Live Map)
@@ -61,6 +63,11 @@ Visualize the cyber war in real-time.
 - [x] **3D WebGL Globe**: Watch live attacks (SSH Brute Force, Malware Beacons) across the world.
 - [x] **Active Threats**: Top malware families currently in the wild.
 - [x] **Real-Time Feed**: Streaming event ticker with country flags.
+
+### 🧠 5. Threat Intelligence & Knowledge Base
+Know your enemy before they know you.
+- [x] **APT Encyclopedia**: The ultimate book of hacking groups. Detailed profiles on who they are, what tools they use, and who they attack.
+- [x] **Intel Feed**: Real-time aggregation of the latest zero-days and exploits. Have the gun ready to shoot before anyone else.
 
 ---
 
