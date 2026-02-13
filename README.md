@@ -17,7 +17,7 @@
 ```
 
 # 🚀 BETTER CALL CHADI 🚀
-### The Ultimate Cyberpunk SOC Dashboard & Pentesting Toolkit
+### The Ultimate Dashboard & Pentesting Toolkit
 
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Flask](https://img.shields.io/badge/Flask-2.3.2-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
